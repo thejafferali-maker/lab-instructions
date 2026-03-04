@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Hello R!"
-author: "[Your Name]"
+author: "Jaffer"
 output: 
   tufte::tufte_html:
     css: ../lab.css
@@ -230,14 +230,14 @@ dino_data %>%
 **Your task:** Adapt the code from Exercise 2, changing `"dino"` to `"star"`.
 
 **Step 1: Filter for star data**
-```{r star-data, eval = FALSE}
-star_data %
-  filter(dataset == ___)
+```{r star-data, eval = TRUE}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
 ```
 
 **Step 2: Create the plot**
-```{r star-plot, fig.fullwidth=TRUE, eval = FALSE}
-ggplot(data = ___, mapping = aes(x = x, y = y)) +
+```{r star-plot, fig.fullwidth=TRUE, eval = TRUE}
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
@@ -249,9 +249,9 @@ star_data %>%
 
 **Write your answers:**
 
-- The correlation coefficient for the star dataset is: 
+- The correlation coefficient for the star dataset is: -0.0629611
 
-- Compared to the dino dataset (r = -0.06447185), the star dataset's correlation is: 
+- Compared to the dino dataset (r = -0.06447185), the star dataset's correlation is: , the star dataset's correlation is: very similar.
 
 🧶 ✅ ⬆️ *This is another good place to pause, knit, commit changes with the commit message "Added answer for Ex 3", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
@@ -262,23 +262,32 @@ star_data %>%
 **Filter, plot, and calculate correlation:**
 ```{r circle-data, eval = FALSE}
 # Your code here
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
 ```
+
 
 ```{r circle-plot, fig.fullwidth=TRUE, eval = FALSE}
 # Your code here
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
 ```{r circle-correlation, eval = FALSE}
 # Your code here
+circle_data %>%
+  summarize(r = cor(x, y))
 ```
 
 **Write your answers:**
 
-- The correlation coefficient for the circle dataset is: 
+- The correlation coefficient for the circle dataset is: : -0.06834336
 
-- Compared to the dino dataset, the circle dataset's correlation is:
+- Compared to the dino dataset, the circle dataset's correlation is: very similar
 
 - What do you notice about the correlation coefficients for dino, star, and circle?
+
+They are all very similar even though the plots look very different.
 
 🧶 ✅ ⬆️ *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
@@ -288,8 +297,8 @@ Facet by the dataset variable, placing the plots in a 3 column grid, and don't a
 
 5.  Finally, let's plot all datasets at once. In order to do this we will make use of faceting.
 
-```{r all-viz, eval=FALSE, fig.fullwidth=TRUE}
-ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
+```{r all-viz, eval=TRUE, fig.fullwidth=TRUE, fig.height=10, fig.width=12}
+ggplot(datasaurus_dozen, aes(x =x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
   theme(legend.position = "none")
