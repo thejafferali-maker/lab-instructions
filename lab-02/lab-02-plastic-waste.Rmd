@@ -1,16 +1,16 @@
 ---
 title: "Lab 02 - Global plastic waste"
-author: "[Your Name]"
+author: "Jaffer Ali"
 output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
   tufte::tufte_handout:
     latex_engine: xelatex
     highlight: pygments
     keep_tex: true
     citation_package: natbib
-  tufte::tufte_html:
-    css: ../lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
 link-citations: true
 ---
 ```{r include = FALSE}
@@ -95,21 +95,21 @@ Before diving into the exercises, let's make sure you're familiar with the RStud
 
 **Question 1:** Without looking, can you name the four panes in RStudio and briefly describe their purpose?
 
-**Your answer:**
+**Your answer:** The Source pane is where you write and edit code or R Markdown files. The Console pane is where R runs commands and shows the results. The Environment pane shows the variables and datasets that are currently loaded in the session. The Files, Plots, Packages, and Help pane lets you browse files, view plots, manage packages, and read help documentation.
 
 
 **Question 2:** Verify that the dataset has loaded into the Environment pane. How many observations are in the dataset?
 
 **Hint:** Look in the Environment pane, or run `nrow(plastic_waste)` in the Console, or click on the dataset name to view it.
 
-**Your answer:** The dataset has _____ observations.
+**Your answer:** The dataset has  240 observations.
 
-**Question 3:** Have a quick look at the data using `View(plastic_waste)` in the Console. You'll notice that some cells contain `NA`. What does `NA` mean in R?
+**Question 3:** Have a quick look at the data using `?` in the Console. You'll notice that some cells contain `NA`. What does `NA` mean in R?
 
 **Hint:** Run `?NA` in the Console to see the documentation.
 
 **Your answer:**
-
+It means there are unavalible or missing values in the dataset
 
 
 **✓ Checkpoint:** Make sure the data loaded correctly and you can see it in your Environment pane before continuing.
