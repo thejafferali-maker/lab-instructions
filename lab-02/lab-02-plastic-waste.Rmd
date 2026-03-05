@@ -370,25 +370,27 @@ plastic_waste %>%
 6. Add appropriate labels
 
 **Build it step by step:**
-```{r recreate-plot, eval=FALSE}
+```{r recreate-plot, eval=TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 plastic_waste %>% 
-  mutate(coastal_pop_prop = ___ / ___) %>%
-  filter(___ < ___) %>%
-  ggplot(aes(x = ___, y = ___, color = ___)) + 
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3) %>%
+  ggplot(aes(x = coastal_pop_prop, y = plastic_waste_per_cap, color = continent)) + 
     geom_point() +
     geom_smooth(color = "black") +
     scale_color_viridis_d() +
-    labs(x = "___", 
-         y = "___", 
-         color = "___",
-         title = "___",
-         subtitle = "___") +
+    labs(x = "Coastal population proportion (Coastal / total population)", 
+         y = "Plastic waste per capita ", 
+         color = "Continent",
+         title = "Plastic waste vs. coastal population proportion",
+         subtitle = "by continent") +
     theme_minimal()
 ```
 
 **Interpretation:** What does this plot reveal about the relationship between coastal population proportion and plastic waste per capita? Does the relationship differ across continents?
 
+
+The plot shows a slight positive relationship between coastal population proportion and plastic waste per capita, meaning countries with more people living near the coast tend to produce a little more plastic waste per person. However, the relationship is weak because the points are spread out. There are some differences across continents, with Africa generally showing lower plastic waste per capita and Europe and North America often showing higher values, but overall the continents overlap and follow a similar pattern.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 8", and push your changes.**
 
