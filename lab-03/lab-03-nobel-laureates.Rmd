@@ -1,6 +1,6 @@
 ---
 title: "Lab 03 - Nobel laureates"
-author: "[Your Name]"
+author: "Jaffer Ali"
 output: 
   tufte::tufte_html:
     css: ../lab.css
@@ -161,16 +161,20 @@ In a few cases the name of the city/country changed after laureate was given (e.
 
 Before diving into the exercises, let's get familiar with the data.
 
-**Question 1:** How many observations and how many variables are in the dataset? Use inline code in your answer.
+**Question 1:** How many observations and how many variables are in the dataset? Use inline code in your answer.   
+
 
 **Hint:** Use   backtick r nrow(nobel) backtick  for rows and  backtick r ncol(nobel) backtick for columns in your narrative text.
 
 **Your answer:** 
 
+935 obs of 26 variables
+
 **Question 2:** Run `View(nobel)` in your Console. What does each row represent?
 
 **Your answer:**
 
+Each row represents a Nobel Prize awarded to a laureate in a specific year and category
 
 
 **Question 3:** Look at the data. What categories of Nobel prizes are included in this dataset?
@@ -178,6 +182,12 @@ Before diving into the exercises, let's get familiar with the data.
 **Hint:** Run `count(nobel, category)` in your Console.
 
 **Your answer:**
+1 Chemistry    
+2 Economics     
+3 Literature   
+4 Medicine     
+5 Peace       
+6 Physics   
 
 ___________________________________________________________________________
 
