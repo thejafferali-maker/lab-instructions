@@ -219,7 +219,7 @@ Create a new data frame called `nobel_living` that filters for:
 -   laureates who are still alive (their `died_date` is `NA`)
 
 **Fill in the blanks below:**
-```{r create-nobel-living, eval=FALSE}
+```{r create-nobel-living, eval=TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
 nobel_living <- nobel %>%
   filter(
@@ -261,7 +261,7 @@ nobel_living %>%
 
 Next, we will limit our analysis to only the following categories: Physics, Medicine, Chemistry, and Economics.
 
-```{r create-science-data, eval = FALSE}
+```{r create-science-data, eval = TRUE}
 nobel_living_science  <- nobel_living %>%
   filter(category %in% c("Physics", "Medicine", "Chemistry", "Economics"))
 ```
@@ -281,12 +281,12 @@ Create a faceted bar plot visualizing the relationship between the category of p
 -   Flip the coordinates so the bars are horizontal, not vertical
 
 **Build your visualization:**
-```{r nobel-bar-plot, eval=FALSE}
+```{r nobel-bar-plot, eval=TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-ggplot(data = nobel_living_science, aes(x = ___)) +
+ggplot(data = nobel_living_science, aes(x = country)) +
   geom_bar() +
   coord_flip() +
-  facet_wrap(~___)
+  facet_wrap(~category)
 ```
 
 **Hints:**
@@ -298,7 +298,7 @@ ggplot(data = nobel_living_science, aes(x = ___)) +
 **Interpretation:** Does the Buzzfeed headline ("Most living Nobel laureates were based in the US when they won their prizes") appear to be supported by the data? Consider all four scientific categories.
 
 **Your answer:**
-
+Yes. In all four categories, the United States has the highest number of living Nobel laureates compared to other countries. This supports the Buzzfeed headline that most living Nobel laureates were based in the U.S. when they won their prizes.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercise 3", and push your changes.**
