@@ -269,7 +269,6 @@ nobel_living_science  <- nobel_living %>%
 **Important:** Make sure you run both code chunks above! You'll need the `nobel_living_science` data frame for the next exercise.
 
 ---
-
 ## Exercise 3
 
 Create a faceted bar plot visualizing the relationship between the category of prize and whether the laureate was in the US when they won the Nobel prize. Interpret your visualization, and say a few words about whether the Buzzfeed headline is supported by the data.
@@ -315,24 +314,22 @@ Create a new variable called `born_country_us` that has the value `"USA"` if the
 ```{marginfigure}
 **Hint:** This is very similar to how we created `country_us` earlier. You can adapt that code!
 ```
-```{r create-born-country, eval=FALSE}
+```{r create-born-country, eval=TRUE}
 # Remember to change eval=FALSE to eval=TRUE!
-nobel_living_science %
-  mutate(
-    born_country_us = if_else(___ == "___", "USA", "Other")
-  )
+nobel_living_science <- nobel_living_science %>%
+  mutate(country_us = if_else(country == "USA", "USA", "Other"))
 ```
 
 **Now count how many laureates were born in the US:**
 ```{r count-born-us, eval=FALSE}
 # Remember to change eval=FALSE to eval=TRUE!
 nobel_living_science %>%
-  count(___)
+  count(born_country)
 ```
 
-**How many laureates were born in the US?** _____
+**How many laureates were born in the US?** 105
 
-**How many were born in other countries?** _____
+**How many were born in other countries?** 123
 
 ---
 
@@ -350,10 +347,10 @@ Add a second variable to your visualization from Exercise 3 based on whether the
 ```{r nobel-stacked-bar, eval=FALSE}
 # Remember to change eval=FALSE to eval=TRUE!
 ggplot(data = nobel_living_science, 
-       aes(x = country_us, fill = ___)) +
+       aes(x = country_us, fill = born_country)) +
   geom_bar() +
   coord_flip() +
-  facet_wrap(~___)
+  facet_wrap(~category)
 ```
 
 **Hints:**
@@ -364,7 +361,7 @@ ggplot(data = nobel_living_science,
 **Interpretation:** Based on your visualization, do the data appear to support Buzzfeed's claim that many US-based laureates were born in other countries?
 
 **Your answer:**
-
+Yes. The visualization shows that many laureates who won their Nobel Prize while based in the United States were born in other countries. This supports Buzzfeed’s claim that many US-based Nobel laureates are immigrants.
 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 4-5", and push your changes.**
