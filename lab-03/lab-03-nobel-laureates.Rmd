@@ -205,9 +205,8 @@ How many observations and how many variables are in the dataset? Use inline code
 
 **Write your answer using inline code:**
 
-The nobel dataset has _____ observations and _____ variables. Each row represents _____.
+The nobel dataset has 935 observations and 26 variables. Each row represents Nobel Prize awarded to a laureate in a specific year and category
 
----
 
 There are some observations in this dataset that we will exclude from our analysis to match the Buzzfeed results.
 
@@ -222,17 +221,17 @@ Create a new data frame called `nobel_living` that filters for:
 **Fill in the blanks below:**
 ```{r create-nobel-living, eval=FALSE}
 # Remember to change eval=FALSE to eval=TRUE!
-nobel_living %
+nobel_living <- nobel %>%
   filter(
-    !is.na(___),
-    ___ != "org",
-    is.na(___)
+    !is.na(country),
+    gender != "org",
+    is.na(died_date)
   )
 ```
 
 **Verify your filtering:** Confirm that once you have filtered for these characteristics you are left with a data frame with 228 observations. Use inline code to check: ` nrow(nobel_living) `
 
-**Your verification:** After filtering, nobel_living has ____ observations.
+**Your verification:** After filtering, nobel_living has 228 observations.
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 1-2", and push your changes.**
 
