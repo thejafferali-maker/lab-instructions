@@ -1,17 +1,17 @@
 ---
 title: "Lab 04 - La Quinta is Spanish for next to Denny's, Pt. 1"
 subtitle: "Visualizing spatial data"
-author: "Your Name"
+author: "Jaffer Ali"
 output: 
+  tufte::tufte_html:
+    css: ../lab.css
+    tufte_variant: "envisioned"
+    highlight: pygments
   tufte::tufte_handout:
     latex_engine: xelatex
     highlight: pygments
     keep_tex: true
     citation_package: natbib
-  tufte::tufte_html:
-    css: ../lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
 link-citations: true
 ---
 ```{r include = FALSE}
@@ -123,7 +123,7 @@ What are the dimensions of the Denny's dataset? What does each row in the datase
 
 **Use inline code to report dimensions.** In your narrative text, you can use inline R code with the functions `nrow()` and `ncol()` to report the number of rows and columns.
 
-**Your answer:** The Denny's dataset has _____ rows and _____ columns. Each row represents _____. The variables are _____.
+**Your answer:** The Denny's dataset has  1,643 rows and 6 columns. Each row represents a single Denny's restaurant location. The variables are address, city, state, zip, longitude, and latitude."
 
 **Hint:** Run `glimpse(dennys)` or `?dennys` to see variable descriptions.
 
@@ -133,7 +133,7 @@ What are the dimensions of the Denny's dataset? What does each row in the datase
 
 What are the dimensions of the La Quinta dataset? What does each row in the dataset represent? What are the variables?
 
-**Your answer:** The La Quinta dataset has _____ rows and _____ columns. Each row represents _____. The variables are _____.
+**Your answer:** The La Quinta dataset has 909 rows and 6 columns. Each row represents a single La Quinta Inn & Suites location. The variables are address, city, state, zip, longitude, and latitude 
 
 🧶 ✅ ⬆️ **Knit, commit with message "Completed Exercises 1-2", and push your changes.**
 
